@@ -8,7 +8,7 @@ export const RootLayout = () => {
         <div className='bg-black'>
             <Navbar />
 
-            <div className='min-h-screen'>
+            <div className=''>
                 <Outlet />
             </div>
 

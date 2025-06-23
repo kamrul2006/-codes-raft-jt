@@ -54,9 +54,9 @@ function Banner() {
                 </div>
 
                 {/* ----------image---------------- */}
-                <div className='w-1/2'>
+                <div className='lg:w-1/2'>
                     <Fade delay={400}>
-                        <img src="item.png" alt="abc" className='w-full' />
+                        <img src="item.png" alt="abc" className='lg:w-full w-10/12 mx-auto rounded-b-full lg:rounded-none' />
                     </Fade>
                 </div>
 
