@@ -3,6 +3,7 @@ import Banner from '../Components/Home/Banner'
 import { AboutPage } from './AboutPage'
 import Education from '../Components/Home/EducationalQualification'
 import SkillsSection from '../Components/Home/MySkilles'
+import ProjectsSection from '../Components/Home/ProjectsSection'
 
 export const HomePage = () => {
     return (
@@ -18,6 +19,8 @@ export const HomePage = () => {
             </div>
 
             <SkillsSection />
+
+            <ProjectsSection />
 
         </div>
     )
