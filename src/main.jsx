@@ -7,6 +7,7 @@ import { RootLayout } from './Layouts/RootLayout.jsx';
 import { HomePage } from './Pages/HomePage.jsx';
 import { ContactPage } from './Pages/ContactPage.jsx';
 import { AboutPage } from './Pages/AboutPage.jsx';
+import ErrorPage from './Components/Fixd/ErrorPage.jsx';
 
 
 const root = document.getElementById("root");
@@ -14,6 +15,7 @@ const root = document.getElementById("root");
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
+      <Route path="*" element={<ErrorPage />} />
       <Route element={<RootLayout />} >
         <Route path='/' element={<HomePage />} />
         <Route path="/contact" element={<ContactPage />} />
