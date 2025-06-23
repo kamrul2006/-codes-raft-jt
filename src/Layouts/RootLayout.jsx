@@ -5,10 +5,10 @@ import Footer from '../Components/Fixd/Footer'
 
 export const RootLayout = () => {
     return (
-        <div>
+        <div className='bg-black'>
             <Navbar />
 
-            <div className='h-screen'>
+            <div className='min-h-screen'>
                 <Outlet />
             </div>
 

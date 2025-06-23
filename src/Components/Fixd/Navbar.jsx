@@ -9,18 +9,20 @@ const Navbar = () => {
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
         { name: "Contact", path: "/contact" },
+        { name: "Projects", path: "/projects" },
     ];
 
     return (
-        <nav className="bg-white/70 backdrop-blur-md shadow-md sticky top-0 z-50 transition-all duration-300">
+        <nav className="bg-black/70 backdrop-blur-md shadow-md sticky top-0 z-50 transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
+
                     {/* Logo */}
                     <Link
                         to="/"
-                        className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text"
+                        className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-lime-500 via-blue-500 to-green-500 text-transparent bg-clip-text"
                     >
-                        KIBank
+                        KI Apurba
                     </Link>
 
                     {/* Desktop Menu */}
@@ -30,20 +32,24 @@ const Navbar = () => {
                                 key={link.path}
                                 to={link.path}
                                 className={({ isActive }) =>
-                                    `relative font-medium text-base transition duration-300 ${isActive ? "text-purple-600" : "text-gray-700 hover:text-purple-600"
-                                    } after:block after:h-[2px] after:bg-purple-500 after:scale-x-0 after:hover:scale-x-100 after:origin-left after:transition-transform`
+                                    `relative font-medium text-base transition duration-300 ${isActive ? "text-lime-600 border-b-2 transition" : "text-gray-400 hover:text-lime-600"
+                                    } after:block after:h-[2px] after:bg-lime-500 after:scale-x-0 after:hover:scale-x-100 after:origin-left after:transition-transform`
                                 }
                             >
                                 {link.name}
                             </NavLink>
                         ))}
 
+
+                    </div>
+
+                    <div>
                         {/* Get Card Button */}
                         <Link
                             to="/get-card"
-                            className="ml-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full shadow-md transition duration-300"
+                            className="ml-4 bg-gradient-to-r from-lime-700 to-lime-400  hover:to-lime-700 hover:from-lime-400   text-white px-4 py-2 rounded shadow-md transition duration-300 hover:drop-shadow-2xl"
                         >
-                            Get Card
+                            Download CV
                         </Link>
                     </div>
 
@@ -51,7 +57,7 @@ const Navbar = () => {
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-gray-800 hover:text-purple-600 transition"
+                            className="text-gray-800 hover:text-lime-600 transition"
                         >
                             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
                         </button>
@@ -69,7 +75,7 @@ const Navbar = () => {
                                 to={link.path}
                                 onClick={() => setIsOpen(false)}
                                 className={({ isActive }) =>
-                                    `text-lg font-semibold transition ${isActive ? "text-purple-600 underline" : "text-gray-700 hover:text-purple-600"
+                                    `text-lg font-semibold transition ${isActive ? "text-lime-600 underline" : "text-gray-700 hover:text-lime-600"
                                     }`
                                 }
                             >
@@ -79,7 +85,7 @@ const Navbar = () => {
                         <Link
                             to="/get-card"
                             onClick={() => setIsOpen(false)}
-                            className="bg-purple-600 text-white px-6 py-2 rounded-full shadow-md hover:bg-purple-700 transition"
+                            className="bg-gradient-to-r from-lime-600 to-lime-400 text-white px-6 py-2 rounded-full shadow-md hover:bg-lime-700 transition"
                         >
                             Get Card
                         </Link>
