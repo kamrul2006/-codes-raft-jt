@@ -20,7 +20,7 @@ const Navbar = () => {
                         to="/"
                         className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-500 text-transparent bg-clip-text"
                     >
-                        HavenBank
+                        KIBank
                     </Link>
 
                     {/* Desktop Menu */}

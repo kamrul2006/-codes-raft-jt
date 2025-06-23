@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router'
 import Navbar from '../Components/Fixd/Navbar'
+import Footer from '../Components/Fixd/Footer'
 
 export const RootLayout = () => {
     return (
@@ -11,7 +12,7 @@ export const RootLayout = () => {
                 <Outlet />
             </div>
 
-
+            <Footer />
         </div>
     )
 }
