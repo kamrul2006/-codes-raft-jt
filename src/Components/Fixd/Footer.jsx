@@ -1,108 +1,80 @@
-import { Link } from "react-router-dom";
-import {
-    FaFacebookF,
-    FaTwitter,
-    FaInstagram,
-    FaLinkedin,
-    FaHome,
-    FaPhoneAlt,
-    FaEnvelope,
-    FaInfoCircle,
-    FaAddressCard,
-} from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaArrowUp } from 'react-icons/fa';
+import icon from "/Fi.png";
 
 const Footer = () => {
+    const handleBackToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
-        <footer className="bg-gradient-to-t from-gray-900 to-gray-800 text-gray-200 py-12 ">
-            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+        <footer className="bg-gray-900 text-white pt-12 px-6 lg:px-20 relative z-10 shadow-inner border-t border-lime-600">
+            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center justify-between">
 
-                {/* Brand */}
-                <div>
-                    <h1 className="text-3xl font-bold text-white mb-3">
-                        <span className="text-lime-500">KI</span>Bank
+                {/* Logo & Name */}
+                <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
+                    <img src={icon} alt="Logo" className="w-24 h-24 object-contain drop-shadow-xl" />
+                    <h1 className="text-2xl font-extrabold tracking-wider text-lime-100 hover:text-lime-300 transition duration-300">
+                        Kamrul Islam Apurba
                     </h1>
-                    <p className="text-sm text-gray-400">
-                        Empowering digital finance with trust and innovation.
+                    <p className="text-sm text-lime-200 opacity-80">
+                        Frontend Developer | React Enthusiast | Creative Coder
                     </p>
                 </div>
 
-                {/* Links */}
-                <div>
-                    <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-                    <ul className="space-y-2 text-sm">
-                        <li>
-                            <Link to="/" className="flex items-center gap-2 hover:text-lime-400">
-                                <FaHome /> Home
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/about" className="flex items-center gap-2 hover:text-lime-400">
-                                <FaInfoCircle /> About
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/contact" className="flex items-center gap-2 hover:text-lime-400">
-                                <FaPhoneAlt /> Contact
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/get-card" className="flex items-center gap-2 hover:text-lime-400">
-                                <FaAddressCard /> Get Card
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-
-                {/* Contact Info */}
-                <div>
-                    <h3 className="text-xl font-semibold mb-4">Contact</h3>
-                    <p className="text-sm flex items-center gap-2 mb-2">
-                        <FaEnvelope /> support@havenbank.com
-                    </p>
-                    <p className="text-sm flex items-center gap-2">
-                        <FaPhoneAlt /> +880 1234 567890
-                    </p>
-                </div>
-
-                {/* Socials */}
-                <div>
-                    <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-                    <div className="flex gap-4">
+                {/* Social Icons */}
+                <div className="flex flex-col items-center md:items-end gap-4">
+                    <h2 className="text-lg font-semibold text-lime-100">Connect with me</h2>
+                    <div className="flex gap-4 text-2xl">
                         <a
-                            href="#"
-                            className="bg-lime-600 hover:bg-lime-700 p-2 rounded-full transition"
-                            aria-label="Facebook"
-                        >
-                            <FaFacebookF />
-                        </a>
-                        <a
-                            href="#"
-                            className="bg-lime-600 hover:bg-lime-700 p-2 rounded-full transition"
-                            aria-label="Twitter"
-                        >
-                            <FaTwitter />
-                        </a>
-                        <a
-                            href="#"
-                            className="bg-lime-600 hover:bg-lime-700 p-2 rounded-full transition"
-                            aria-label="Instagram"
-                        >
-                            <FaInstagram />
-                        </a>
-                        <a
-                            href="#"
-                            className="bg-lime-600 hover:bg-lime-700 p-2 rounded-full transition"
-                            aria-label="LinkedIn"
+                            href="https://www.linkedin.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="LinkedIn"
+                            className="p-3 rounded-full bg-white/10 hover:bg-lime-500/30 transition-all hover:scale-110 shadow-lg"
                         >
                             <FaLinkedin />
+                        </a>
+                        <a
+                            href="https://github.com/kamrul2006"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="GitHub"
+                            className="p-3 rounded-full bg-white/10 hover:bg-lime-500/30 transition-all hover:scale-110 shadow-lg"
+                        >
+                            <FaGithub />
+                        </a>
+                        <a
+                            href="mailto:kamrulislamapurba@gmail.com"
+                            title="Email"
+                            className="p-3 rounded-full bg-white/10 hover:bg-lime-500/30 transition-all hover:scale-110 shadow-lg"
+                        >
+                            <FaEnvelope />
                         </a>
                     </div>
                 </div>
             </div>
 
-            {/* Bottom Copyright */}
-            <div className="text-center text-sm text-gray-400 mt-12 border-t border-gray-700 pt-6">
-                &copy; {new Date().getFullYear()} Kamrul Islam Apurba. All rights reserved.
+
+            <hr className="border-lime-700 my-4" />
+
+            {/* Footer Bottom */}
+            <div className="text-right flex justify-between items-center">
+                <p className="text-center text-sm text-lime-300 opacity-80 pb-6">
+                    &copy; {new Date().getFullYear()} Kamrul Islam Apurba. All rights reserved.
+                </p>
+
+                {/* Back to Top Button  */}
+
+                <button
+                    onClick={handleBackToTop}
+                    title="Back to Top"
+                    className="p-3 mb-2 rounded-full bg-lime-600 hover:bg-lime-500 text-white text-xl shadow-lg transition-all transform hover:scale-110"
+                >
+                    <FaArrowUp />
+                </button>
             </div>
         </footer>
     );
