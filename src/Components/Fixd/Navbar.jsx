@@ -46,7 +46,7 @@ const Navbar = () => {
                     </div>
 
                     <div>
-                        {/* Get Card Button */}
+                        {/* dcv  Button */}
                         <Link
                             to="/get-card"
                             className="ml-4 bg-gradient-to-r from-lime-700 to-lime-400  hover:to-lime-700 hover:from-lime-400   text-white px-4 py-2 rounded shadow-md transition duration-300 hover:drop-shadow-2xl"
@@ -59,7 +59,7 @@ const Navbar = () => {
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-gray-800 hover:text-lime-600 transition"
+                            className="text-gray-400 hover:text-lime-600 transition"
                         >
                             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
                         </button>

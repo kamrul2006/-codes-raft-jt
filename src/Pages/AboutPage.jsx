@@ -16,7 +16,7 @@ export const AboutPage = () => {
                     <img
                         src={about}
                         alt="About Me"
-                        className="w-96 md:w-[450px] h-auto object-cover rounded-xl hover:shadow-lime-500/50 transition duration-500 ease-in-out"
+                        className="w-10/12  md:w-[450px] h-auto object-cover rounded-xl hover:shadow-lime-500/50 transition duration-500 ease-in-out"
                     />
                 </div>
             </Fade>
