@@ -47,12 +47,13 @@ const Navbar = () => {
 
                     <div>
                         {/* dcv  Button */}
-                        <Link
-                            to="/get-card"
-                            className="ml-4 bg-gradient-to-r from-lime-700 to-lime-400  hover:to-lime-700 hover:from-lime-400   text-white px-4 py-2 rounded shadow-md transition duration-300 hover:drop-shadow-2xl"
+                        <a
+                            href="/RESUME OF KAMRUL ISLAM .pdf"
+                            download
+                            className="ml-4 bg-gradient-to-r from-lime-700 to-lime-400  hover:to-lime-700 hover:from-lime-400   text-white px-4 py-2 rounded shadow-md transition duration-300 hover:drop-shadow-2xl font-semibold"
                         >
                             Download CV
-                        </Link>
+                        </a>
                     </div>
 
                     {/* Mobile Toggle Button */}
