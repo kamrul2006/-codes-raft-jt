@@ -56,14 +56,14 @@ const projects = [
 const ProjectCard = ({ project }) => {
 
     return (
-        <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out w-full p-6">
+        <div className="bg-black border border-lime-400 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out w-full p-6">
 
             <Fade duration={1500}>
                 <img src={project.image} alt={project.name} className="w-full h-40 object-cover rounded-xl mb-4 border-2" />
             </Fade>
 
-            <h3 className="text-2xl font-semibold text-lime-800">{project.name}</h3>
-            <h4 className="text-md text-gray-500 mb-4">{project.nameDis}</h4>
+            <h3 className="text-2xl font-semibold  text-lime-500">{project.name}</h3>
+            <h4 className="text-md text-gray-400 mb-4">{project.nameDis}</h4>
 
 
         </div>
@@ -74,7 +74,7 @@ const ProjectsSection = () => {
     return (
         <section id="portfolio" className="py-16 bg-gradient-to-b from-lime-950 to-black text-white">
             <h2 className="text-4xl font-bold text-lime-400 text-center mb-12">My Projects</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mx-4">
+            <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mx-4">
                 {projects.map((project) => (
                     <ProjectCard key={project.name} project={project} />
                 ))}
@@ -82,7 +82,7 @@ const ProjectsSection = () => {
 
             <div className="flex items-center justify-center py-5 lg:py-10">
                 <Link to={'/projects'}
-                    className="py-2  px-5 lg:px-9 lg:text-lg rounded-full bg-lime-600 text-black hover:border-2 hover:bg-black transition hover:border-lime-600 hover:text-lime-600 flex items-center justify-center gap-3 hover:drop-shadow-2xl hover:drop-shadow-lime-950 font-semibold w-full lg:w-fit mx-4">
+                    className="py-2  px-5 lg:px-9 lg:text-lg rounded-full bg-lime-600 text-black hover:border-2 hover:bg-black transition hover:border-lime-600 hover:text-lime-600 flex items-center justify-center gap-3 hover:drop-shadow-2xl hover:drop-shadow-lime-950 font-semibold w-full lg:w-fit mx-">
                     See All Projects
                 </Link>
             </div>

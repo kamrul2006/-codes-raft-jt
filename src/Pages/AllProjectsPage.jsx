@@ -4,6 +4,8 @@ import pr2 from "/Projects/pr2.jpg";
 import pr4 from "/Projects/pr4.jpg";
 import pr5 from "/Projects/pr5.jpg";
 import pr6 from "/Projects/prX.png";
+import pp from "/Projects/pp.png";
+import px from "/Projects/px.png";
 import { Fade } from 'react-awesome-reveal';
 
 const projects = [
@@ -30,17 +32,6 @@ const projects = [
         futurePlans: ['Implementing AI-powered product recommendations', 'Adding support for multiple currencies'],
     },
     {
-        name: 'K-HistoArts',
-        nameDis: "(A Historical Artifacts App)",
-        image: pr4,
-        techStack: ['React', 'Node.js', 'TailwindCSS', 'React-Router', 'Firebase', "etc."],
-        description: 'This is a web application which allows users to browse historical artifacts, view details, and add their own entries.',
-        liveLink: 'https://k-histocraft.web.app/',
-        githubLink: 'https://github.com/kamrul2006/Histo-Arts',
-        challenges: ['Real-time updates synchronization', 'Designing an intuitive user interface', "Fully responsive"],
-        futurePlans: ['Adding collaboration features', 'Integrating with calendar apps'],
-    },
-    {
         name: 'K-Visa',
         nameDis: "(A Visa Navigator Platform)",
         image: pr2,
@@ -62,27 +53,67 @@ const projects = [
         challenges: ['Implementing Private Routes', 'Designing a responsive layout'],
         futurePlans: ['Adding a comment section', 'Implementing social media sharing'],
     },
+    {
+        name: 'K-HistoArts',
+        nameDis: "(A Historical Artifacts App)",
+        image: pr4,
+        techStack: ['React', 'Node.js', 'TailwindCSS', 'React-Router', 'Firebase', "etc."],
+        description: 'This is a web application which allows users to browse historical artifacts, view details, and add their own entries.',
+        liveLink: 'https://k-histocraft.web.app/',
+        githubLink: 'https://github.com/kamrul2006/Histo-Arts',
+        challenges: ['Real-time updates synchronization', 'Designing an intuitive user interface', "Fully responsive"],
+        futurePlans: ['Adding collaboration features', 'Integrating with calendar apps'],
+    },
+];
+
+const NextProjects = [
+    {
+        name: 'Free PS BD',
+        nameDis: "( In solidarity with Palestine)",
+        image: pp,
+        techStack: ['React', 'Next.js', 'Node.js', 'TailwindCSS', 'React-Router', 'Firebase', "etc."],
+        description: 'Free PS BD is a modern, responsive web application built with Next.js 15, providing real-time news, updates, and resources in solidarity with Palestine. Featuring seamless authentication, role-based access control, and a moderated article publishing system, it empowers communities with reliable information.',
+
+        liveLink: "https://free-ps-bd-next.vercel.app/",
+        githubLink: 'https://github.com/kamrul2006/FREE_PS_BD-Next.js-client',
+        challenges: ['Integrating payment gateway', 'Optimizing performance for large datasets', 'Admin, Moderator and User Role implementation'],
+        futurePlans: ['Implementing AI-powered product recommendations', 'Adding support for multiple currencies'],
+    },
+    {
+        name: 'K-Blogify',
+        nameDis: "( Full-stack blogging platform )",
+        image: px,
+        techStack: ['React', 'Next.js', 'Node.js', 'TailwindCSS', 'React-Router', 'Firebase', "etc."],
+        description: 'A modern full-stack blogging platform built with Next.js 15, Express.js, and MongoDB, designed for seamless content creation and management with full authentication support. Deployed on Vercel for frontend and Railway/Render for backend.',
+
+        liveLink: "https://k-blogify.vercel.app/",
+        githubLink: 'https://github.com/kamrul2006/K-Blogify-Next.js',
+        challenges: ['Integrating payment gateway', 'Optimizing performance for large datasets', 'Admin, Moderator and User Role implementation'],
+        futurePlans: ['Implementing AI-powered product recommendations', 'Adding support for multiple currencies'],
+    },
+
 ];
 
 const ProjectCard = ({ project }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out w-full p-6">
+        <div className="bg-black border border-lime-400 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out w-full font-semibold">
 
             <Fade duration={1500}>
-                <img src={project.image} alt={project.name} className="w-full h-40 object-cover rounded-xl mb-4 border-2" />
+                <img src={project.image} alt={project.name} className="w-full h-40 object-cover rounded-t-xl mb-4 border-b-2 border-lime-400" />
             </Fade>
+            <div className='px-6 pb-3'>
+                <h3 className="text-2xl font-semibold text-lime-800">{project.name}</h3>
+                <h4 className="text-md text-gray-500 mb-4  ">{project.nameDis}</h4>
 
-            <h3 className="text-2xl font-semibold text-teal-800">{project.name}</h3>
-            <h4 className="text-md text-gray-500 mb-4">{project.nameDis}</h4>
-
-            <button
-                className="bg-teal-600 text-white py-2 px-6 rounded-lg mt-4 w-full hover:bg-teal-700 transition-all duration-300"
-                onClick={() => setShowModal(true)}
-            >
-                View Details
-            </button>
+                <button
+                    className="bg-lime-600 text-black py-2 px-6 rounded-lg mt-4 w-full hover:bg-lime-700 transition-all duration-300  "
+                    onClick={() => setShowModal(true)}
+                >
+                    View Details
+                </button>
+            </div>
 
             {showModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
@@ -91,16 +122,16 @@ const ProjectCard = ({ project }) => {
                             <img src={project.image} alt={project.name} className="w-full h-56 object-cover rounded-xl" />
                         </div>
 
-                        <h2 className="text-3xl font-semibold text-teal-800 mt-6">{project.name} <span className="text-lg text-gray-500">{project.nameDis}</span></h2>
+                        <h2 className="text-3xl font-semibold text-lime-800 mt-6">{project.name} <span className="text-lg text-gray-500">{project.nameDis}</span></h2>
                         <p className="mt-6 text-lg text-gray-700"><strong>Technology Stack:</strong> {project.techStack.join(', ')}</p>
                         <p className="mt-4 text-lg text-gray-700"><strong>Description:</strong> {project.description}</p>
 
                         <div className="flex gap-6 mt-6 justify-center">
-                            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="bg-teal-600 text-white py-2 px-6 rounded-lg hover:bg-teal-700 transition duration-200">
+                            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="bg-lime-600 text-white py-2 px-6 rounded-lg hover:bg-lime-700 transition duration-200">
                                 Live Project
                             </a>
 
-                            <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="bg-transparent border-2 border-teal-600 text-teal-600 py-2 px-6 rounded-lg hover:bg-teal-100 transition duration-200">
+                            <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="bg-transparent border-2 border-lime-600 text-lime-600 py-2 px-6 rounded-lg hover:bg-lime-100 transition duration-200">
                                 GitHub Repository
                             </a>
                         </div>
@@ -109,7 +140,7 @@ const ProjectCard = ({ project }) => {
                         <p className="mt-4 text-lg text-gray-700"><strong>Future Plans:</strong> {project.futurePlans.join(', ')}</p>
 
                         <button
-                            className="bg-teal-500 text-white py-2 px-6 rounded-lg mt-6 w-full hover:bg-teal-600 transition duration-200"
+                            className="bg-lime-500 text-white py-2 px-6 rounded-lg mt-6 w-full hover:bg-lime-600 transition duration-200"
                             onClick={() => setShowModal(false)}
                         >
                             Close
@@ -123,11 +154,18 @@ const ProjectCard = ({ project }) => {
 
 const AllProjectsPage = () => {
     return (
-        <section id="portfolio" className="py-16 bg-gradient-to-b from-teal-950 to-black text-white">
-            <h2 className="text-4xl font-bold text-teal-400 text-center mb-12">My Projects</h2>
+        <section id="portfolio" className="py-16 bg-gradient-to-b from-lime-950 to-black text-white">
+            <h2 className="text-4xl font-bold text-lime-400 text-center mb-12">Vite Projects</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mx-4">
                 {projects.map((project) => (
                     <ProjectCard key={project.name} project={project} />
+                ))}
+            </div>
+
+            <h2 className="text-4xl font-bold text-lime-400 text-center mb-12">Next.js Projects</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mx-4">
+                {NextProjects.map((NextProject) => (
+                    <ProjectCard key={NextProject.name} project={NextProject} />
                 ))}
             </div>
         </section>
