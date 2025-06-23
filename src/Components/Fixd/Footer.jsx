@@ -16,11 +16,11 @@ const Footer = () => {
                 {/* Logo & Name */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
                     <img src={icon} alt="Logo" className="w-24 h-24 object-contain drop-shadow-xl" />
-                    <h1 className="text-2xl font-extrabold tracking-wider text-lime-100 hover:text-lime-300 transition duration-300">
+                    <h1 className="text-2xl font-semibold tracking-wider text-lime-100 hover:text-lime-300 transition duration-300">
                         Kamrul Islam Apurba
                     </h1>
-                    <p className="text-sm text-lime-200 opacity-80">
-                        Frontend Developer | React Enthusiast | Creative Coder
+                    <p className="text-sm font-medium text-lime-200 opacity-80">
+                        Frontend Developer | React Developer | MS Word & Photoshop Expert
                     </p>
                 </div>
 
