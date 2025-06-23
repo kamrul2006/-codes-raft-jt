@@ -1,7 +1,7 @@
 import React from 'react'
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
 import { FaUserAlt, FaTools, FaCode } from "react-icons/fa";
-import about from "/about.png";
+import about from "/about.webp";
 import { Link } from 'react-router';
 
 export const AboutPage = () => {

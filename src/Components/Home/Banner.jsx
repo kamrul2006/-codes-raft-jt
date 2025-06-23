@@ -60,7 +60,7 @@ function Banner() {
                 {/* ----------image---------------- */}
                 <div className='lg:w-1/2'>
                     <Fade delay={400}>
-                        <img src="item.png" alt="abc" className='lg:w-full w-10/12 mx-auto rounded-b-full lg:rounded-none mb-5 lg:mb-0 border-b-4 lg:border-0 border-lime-500' />
+                        <img src="item.webp" alt="abc" className='lg:w-full w-10/12 mx-auto rounded-b-full lg:rounded-none mb-5 lg:mb-0 border-b-4 lg:border-0 border-lime-500' />
                     </Fade>
                 </div>
 
