@@ -6,9 +6,10 @@ import { Typewriter } from 'react-simple-typewriter'
 
 function Banner() {
     return (
-        <div className=' flex items-center justify-center'>
+        <div className=' flex items-center justify-center z-40'>
             <div className='flex flex-col-reverse lg:flex-row items-center justify-between mx-auto max-w-7xl text-center lg:text-left'>
 
+                {/* ---------name and title-------- */}
                 <div className=' px-10 pb-10 lg:pb-0'>
 
                     <Slide>
@@ -27,22 +28,40 @@ function Banner() {
                             />
                         </div>
 
+                        {/* -------------------social logos------------ */}
                         <div className='my-5 flex items-center justify-center lg:justify-start gap-4 font-serif  text-xl'>
-                            <a href="" className='text-lime-500 hover:text-black hover:bg-lime-500 rounded-full  transition p-2 border border-lime-400'><FiGithub /></a>
+                            <a
+                                href="https://github.com/kamrul2006"
+                                className='text-lime-500 hover:text-black hover:bg-lime-500 rounded-full  transition p-2 border border-lime-400'>
+                                <FiGithub />
+                            </a>
 
-                            <a href="" className='text-lime-500 hover:text-black hover:bg-lime-500 rounded-full  transition p-2 border border-lime-400'> <FiLinkedin /></a>
+                            <a
+                                href="https://www.linkedin.com"
+                                className='text-lime-500 hover:text-black hover:bg-lime-500 rounded-full  transition p-2 border border-lime-400'> <FiLinkedin />
+                            </a>
 
+                            <a
+                                href="https://x.com/kamrul__2006"
+                                className='text-lime-500 hover:text-black hover:bg-lime-500 rounded-full  transition p-2 border border-lime-400'>
+                                <FiTwitter />
+                            </a>
 
-                            <a href="" className='text-lime-500 hover:text-black hover:bg-lime-500 rounded-full  transition p-2 border border-lime-400'><FiTwitter /></a>
-
-
-                            <a href="" className='text-lime-500 hover:text-black hover:bg-lime-500 rounded-full  transition p-2 border border-lime-400'><FiFacebook /></a>
+                            <a
+                                href="https://facebook.com/kamrul.islam.apurba"
+                                className='text-lime-500 hover:text-black hover:bg-lime-500 rounded-full  transition p-2 border border-lime-400'>
+                                <FiFacebook />
+                            </a>
 
 
                         </div>
 
+                        {/* -------------other Buttons---------- */}
                         <div className='mt-10 space-x-3 font-semibold flex items-center justify-center lg:justify-start'>
-                            <Link to={"/about"} className=' py-2  px-5 lg:px-9 lg:text-lg rounded-full bg-lime-600 text-black hover:border-2 hover:bg-black transition hover:border-lime-600 hover:text-lime-600 flex items-center justify-center gap-3 hover:drop-shadow-2xl hover:drop-shadow-lime-950'>
+
+                            <Link
+                                to={"/about"}
+                                className=' py-2  px-5 lg:px-9 lg:text-lg rounded-full bg-lime-600 text-black hover:border-2 hover:bg-black transition hover:border-lime-600 hover:text-lime-600 flex items-center justify-center gap-3 hover:drop-shadow-2xl hover:drop-shadow-lime-950'>
                                 Explore More <BiRightArrow />
                             </Link>
 

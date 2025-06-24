@@ -16,7 +16,7 @@ const Footer = () => {
                 {/* Logo & Name */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
                     <img src={icon} alt="Logo" className="w-24 h-24 object-contain drop-shadow-xl" />
-                    <h1 className="text-2xl font-semibold tracking-wider text-lime-100 hover:text-lime-300 transition duration-300">
+                    <h1 className="text-2xl font-semibold tracking-wider text-lime-300 transition duration-300">
                         Kamrul Islam Apurba
                     </h1>
                     <p className="text-sm font-medium text-lime-200 opacity-80">
@@ -71,7 +71,7 @@ const Footer = () => {
                 <button
                     onClick={handleBackToTop}
                     title="Back to Top"
-                    className="p-3 mb-2 rounded-full bg-lime-600 hover:bg-lime-500 text-white text-xl shadow-lg transition-all transform hover:scale-110"
+                    className="p-3 mb-2 rounded-full bg-lime-600 hover:bg-lime-500 text-white text-xl shadow-lg transition-all transform hover:scale-110 fixed z-30 bottom-4 right-4"
                 >
                     <FaArrowUp />
                 </button>

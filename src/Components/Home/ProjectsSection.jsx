@@ -2,7 +2,7 @@ import pr1 from "/Projects/pro1.jpg";
 import pr2 from "/Projects/pr2.jpg";
 import pr5 from "/Projects/pr5.jpg";
 import pr6 from "/Projects/prX.png";
-import { Fade } from 'react-awesome-reveal';
+import { Fade, Slide } from 'react-awesome-reveal';
 import { Link } from "react-router";
 
 const projects = [
@@ -56,36 +56,73 @@ const projects = [
 const ProjectCard = ({ project }) => {
 
     return (
-        <div className="bg-black border border-lime-400 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out w-full p-6">
+        <Slide direction="right">
+            <div className="bg-black border border-lime-400 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out w-full p-3">
 
-            <Fade duration={1500}>
-                <img src={project.image} alt={project.name} className="w-full h-40 object-cover rounded-xl mb-4 border-2" />
-            </Fade>
+                <Fade duration={1500}>
+                    <img src={project.image} alt={project.name} className="w-full lg:h-20 h-40 object-cover rounded-xl mb-4 border-2" />
+                </Fade>
 
-            <h3 className="text-2xl font-semibold  text-lime-500">{project.name}</h3>
-            <h4 className="text-md text-gray-400 mb-4">{project.nameDis}</h4>
+                <h3 className="text-2xl font-semibold  text-lime-500">{project.name}</h3>
+                <h4 className="text-md text-gray-400 ">{project.nameDis}</h4>
 
 
-        </div>
+            </div>
+        </Slide>
     );
 };
 
 const ProjectsSection = () => {
     return (
-        <section id="portfolio" className="py-16 bg-gradient-to-b from-lime-950 to-black text-white">
-            <h2 className="text-4xl font-bold text-lime-400 text-center mb-12">My Projects</h2>
-            <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mx-4">
-                {projects.map((project) => (
-                    <ProjectCard key={project.name} project={project} />
-                ))}
+        <section id="portfolio" className="py-16 bg-gradient-to-b from-lime-950 to-black text-white ">
+
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto">
+                {/* -----------------text and info----------------- */}
+
+                <div>
+                    <Fade duration={2000} >
+                        <h2 className="text-4xl font-bold text-lime-400 text-center mb-8">My Projects</h2>
+
+                        <p className="text-xl  text-center px-3">
+                            Welcome to my project section. I love to build projects with React , Vite , Next.js.
+                            <br />
+                            I also love to work with Tailwind CSS, DaisyUI, Flowbite and many other react tools (e.g: React-hook-form, React-awesome-revel, React-typewriter etc) for UI Development.
+                            <br />
+                            For Backend Work I know about Node.js, Express.js , MongoDB, JWT etc.
+                        </p>
+
+                        <p className="text-xl  text-center px-3 text-lime-400">
+                            Here are some Project Completed by myself. <br />
+                            Click on the <span className="underline">"See all Project"</span> button bellow to see all the projects.
+                        </p>
+
+                        <div className="flex items-center justify-center py-5 lg:py-10 ">
+                            <Link to={'/projects'}
+                                className="py-2  px-5 lg:px-9 lg:text-lg rounded-full bg-lime-600 text-black hover:border-2 hover:bg-black transition hover:border-lime-600 hover:text-lime-600  gap-3 hover:drop-shadow-2xl hover:drop-shadow-lime-950 font-semibold w-full lg:w-fit hidden lg:block">
+                                See All Projects
+                            </Link>
+                        </div>
+                    </Fade>
+                </div>
+
+                {/* --------------Projects card-------------- */}
+                <div className="grid grid-cols-1   md:grid-cols-2  gap-5 mx-4">
+                    {projects.map((project) => (
+                        <ProjectCard key={project.name} project={project} />
+                    ))}
+                </div>
             </div>
+
+
 
             <div className="flex items-center justify-center py-5 lg:py-10">
                 <Link to={'/projects'}
-                    className="py-2  px-5 lg:px-9 lg:text-lg rounded-full bg-lime-600 text-black hover:border-2 hover:bg-black transition hover:border-lime-600 hover:text-lime-600 flex items-center justify-center gap-3 hover:drop-shadow-2xl hover:drop-shadow-lime-950 font-semibold w-full lg:w-fit mx-">
+                    className="py-2  px-5 lg:px-9 lg:text-lg rounded-full bg-lime-600 text-black hover:border-2 hover:bg-black transition hover:border-lime-600 hover:text-lime-600 lg:hidden hover:drop-shadow-2xl hover:drop-shadow-lime-950 font-semibold w-full lg:w-fit text-center mx-4">
                     See All Projects
                 </Link>
             </div>
+
         </section>
     );
 };

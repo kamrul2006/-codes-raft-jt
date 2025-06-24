@@ -8,7 +8,7 @@ const Navbar = () => {
     const navLinks = [
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
-        { name: "Contact", path: "/contact" },
+        { name: "Services", path: "/services" },
         { name: "Projects", path: "/projects" },
     ];
 
@@ -22,9 +22,9 @@ const Navbar = () => {
                     {/* Logo */}
                     <Link
                         to="/"
-                        className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-lime-500 via-blue-500 to-green-500 text-transparent bg-clip-text"
+                        className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-lime-500 via-lime-200 to-green-500 text-transparent bg-clip-text"
                     >
-                        KI Apurba
+                        K.I. Apurba
                     </Link>
 
                     {/* Desktop Menu */}

@@ -27,7 +27,7 @@ const skill2 = [
 
 export default function SkillsSection() {
     return (
-        <div className="py-16 bg-gradient-to-b to-lime-950 from-black text-black text-center px-4 sm:px-6 md:px-12">
+        <div className="py-16 bg-gradient-to-b to-lime-950 from-black text-black text-center">
             <h2 className="text-4xl font-semibold mb-10 text-lime-300">My Skills</h2>
 
             <Marquee gradient={false} speed={30} pauseOnHover>
