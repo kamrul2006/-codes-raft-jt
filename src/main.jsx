@@ -8,6 +8,7 @@ import { HomePage } from './Pages/HomePage.jsx';
 import { AboutPage } from './Pages/AboutPage.jsx';
 import ErrorPage from './Components/Fixd/ErrorPage.jsx';
 import AllProjectsPage from './Pages/AllProjectsPage.jsx';
+import { ServicesPage } from './Pages/ServicesPage.jsx';
 
 
 const root = document.getElementById("root");
@@ -20,6 +21,7 @@ ReactDOM.createRoot(root).render(
         <Route path='/' element={<HomePage />} />
         <Route path="/projects" element={<AllProjectsPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage />} />
       </Route>
 
     </Routes>

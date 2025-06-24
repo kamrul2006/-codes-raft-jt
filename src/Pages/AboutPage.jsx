@@ -71,12 +71,12 @@ export const AboutPage = () => {
                 </Fade>
 
                 <Zoom   >
-                    <Link
-                        to="/contact"
+                    <a
+                        href="#contact"
                         className="ml-4 bg-gradient-to-r from-lime-700 to-lime-400  hover:to-lime-700 hover:from-lime-400   text-black px-4 py-2 rounded shadow-md transition duration-300 hover:drop-shadow-2xl flex items-center w-fit gap-2 font-semibold"
                     >
                         <FaCode /> Get In Touch
-                    </Link>
+                    </a>
                 </Zoom>
             </div>
         </section>

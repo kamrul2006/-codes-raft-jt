@@ -4,6 +4,7 @@ import { AboutPage } from './AboutPage'
 import Education from '../Components/Home/EducationalQualification'
 import SkillsSection from '../Components/Home/MySkilles'
 import ProjectsSection from '../Components/Home/ProjectsSection'
+import ContactMe from '../Components/Home/ContactSection'
 
 export const HomePage = () => {
     return (
@@ -21,6 +22,8 @@ export const HomePage = () => {
             <SkillsSection />
 
             <ProjectsSection />
+
+            <ContactMe />
 
         </div>
     )
