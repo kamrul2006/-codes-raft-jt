@@ -9,6 +9,7 @@ import { AboutPage } from './Pages/AboutPage.jsx';
 import ErrorPage from './Components/Fixd/ErrorPage.jsx';
 import AllProjectsPage from './Pages/AllProjectsPage.jsx';
 import { ServicesPage } from './Pages/ServicesPage.jsx';
+import ContactMe from './Components/Home/ContactSection.jsx';
 
 
 const root = document.getElementById("root");
@@ -22,6 +23,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/projects" element={<AllProjectsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/contact" element={<ContactMe />} />
       </Route>
 
     </Routes>

@@ -74,7 +74,7 @@ const ProjectCard = ({ project }) => {
 
 const ProjectsSection = () => {
     return (
-        <section id="portfolio" className="py-16 bg-gradient-to-b from-lime-950 to-black text-white ">
+        <section id="portfolio" className="pt-16 bg-gradient-to-b from-lime-950 to-black text-white ">
 
 
             <div className="grid grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto">
@@ -82,9 +82,14 @@ const ProjectsSection = () => {
 
                 <div>
                     <Fade duration={2000} >
-                        <h2 className="text-4xl font-bold text-lime-400 text-center mb-8">My Projects</h2>
+                        <h2
+                            className="lg:text-4xl text-3xl font-bold text-lime-200 mb-4 text-center lg:text-left lg:pl-10">
+                            My Recent &
+                            <br />
+                            <span className="lg:text-6xl text-5xl text-lime-500">Latest Projects</span>
+                        </h2>
 
-                        <p className="text-xl  text-center px-3">
+                        <p className="text-xl text-center lg:text-justify px-3 lg:px-10">
                             Welcome to my project section. I love to build projects with React , Vite , Next.js.
                             <br />
                             I also love to work with Tailwind CSS, DaisyUI, Flowbite and many other react tools (e.g: React-hook-form, React-awesome-revel, React-typewriter etc) for UI Development.
@@ -92,12 +97,12 @@ const ProjectsSection = () => {
                             For Backend Work I know about Node.js, Express.js , MongoDB, JWT etc.
                         </p>
 
-                        <p className="text-xl  text-center px-3 text-lime-400">
+                        <p className="text-xl text-center lg:text-left px-3 text-lime-400 lg:px-10">
                             Here are some Project Completed by myself. <br />
                             Click on the <span className="underline">"See all Project"</span> button bellow to see all the projects.
                         </p>
 
-                        <div className="flex items-center justify-center py-5 lg:py-10 ">
+                        <div className="flex items-center lg:pl-10 py-5 lg:py-10 ">
                             <Link to={'/projects'}
                                 className="py-2  px-5 lg:px-9 lg:text-lg rounded-full bg-lime-600 text-black hover:border-2 hover:bg-black transition hover:border-lime-600 hover:text-lime-600  gap-3 hover:drop-shadow-2xl hover:drop-shadow-lime-950 font-semibold w-full lg:w-fit hidden lg:block">
                                 See All Projects

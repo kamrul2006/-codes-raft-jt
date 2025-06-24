@@ -15,9 +15,7 @@ export const HomePage = () => {
                 <AboutPage />
             </div>
 
-            <div className='border-t-4 border-lime-500'>
-                <Education />
-            </div>
+            <Education />
 
             <SkillsSection />
 

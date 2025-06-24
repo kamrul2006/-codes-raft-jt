@@ -16,7 +16,7 @@ export const AboutPage = () => {
                     <img
                         src={about}
                         alt="About Me"
-                        className="w-10/12  md:w-[450px] h-auto object-cover rounded-xl hover:shadow-lime-500/50 transition duration-500 ease-in-out"
+                        className="w-10/12  md:w-[450px] h-auto object-cover rounded-xl hover:shadow-lime-500/50 transition duration-500 ease-in-out border-b-4 border-lime-500"
                     />
                 </div>
             </Fade>
@@ -70,14 +70,25 @@ export const AboutPage = () => {
                     </p>
                 </Fade>
 
-                <Zoom   >
-                    <a
-                        href="#contact"
-                        className="ml-4 bg-gradient-to-r from-lime-700 to-lime-400  hover:to-lime-700 hover:from-lime-400   text-black px-4 py-2 rounded shadow-md transition duration-300 hover:drop-shadow-2xl flex items-center w-fit gap-2 font-semibold"
-                    >
-                        <FaCode /> Get In Touch
-                    </a>
-                </Zoom>
+                <div className='flex items-center gap-2'>
+                    <Zoom   >
+                        <Link
+                            to="/contact"
+                            className="ml-4 bg-gradient-to-r from-lime-700 to-lime-400  hover:to-lime-700 hover:from-lime-400   text-black px-4 py-2 rounded shadow-md transition duration-300 hover:drop-shadow-2xl flex items-center w-fit gap-2 font-semibold"
+                        >
+                            <FaCode /> Get In Touch
+                        </Link>
+                    </Zoom>
+
+                    <Zoom   >
+                        <Link
+                            to="/services"
+                            className="ml-4 bg-gradient-to-r from-lime-700 to-lime-400  hover:to-lime-700 hover:from-lime-400   text-black px-4 py-2 rounded shadow-md transition duration-300 hover:drop-shadow-2xl flex items-center w-fit gap-2 font-semibold"
+                        >
+                            My Services
+                        </Link>
+                    </Zoom>
+                </div>
             </div>
         </section>
     )

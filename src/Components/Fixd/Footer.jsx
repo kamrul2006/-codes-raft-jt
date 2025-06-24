@@ -10,7 +10,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-gray-900 text-white pt-12 px-6 lg:px-20 relative z-10 shadow-inner border-t border-lime-600">
+        <footer className="bg-black text-white pt-12 px-6 lg:px-20 relative z-10 shadow-inner border-t border-lime-600">
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center justify-between">
 
                 {/* Logo & Name */}
