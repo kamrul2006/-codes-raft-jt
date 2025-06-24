@@ -3,8 +3,6 @@
 
 This is my personal **portfolio website**, built with **React**, **Vite**, **Tailwind CSS**, and various animation libraries. It showcases my projects, skills, and contact information in a modern and responsive dark-themed interface.
 
-
-
 ---
 
 ## 🔧 Tech Stack
@@ -26,7 +24,7 @@ This is my personal **portfolio website**, built with **React**, **Vite**, **Tai
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/codes-raft-jt.git
+git clone https://github.com/kamrul2006/codes-raft-jt.git
 cd codes-raft-jt
 ```
 
