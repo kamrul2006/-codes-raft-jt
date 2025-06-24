@@ -8,7 +8,7 @@ export const AboutPage = () => {
     return (
         <section
             id="about"
-            className="bg-gradient-to-b from-lime-950 to-black text-white pt-20 px-6 md:px-14  flex flex-col md:flex-row items-center justify-between "
+            className="bg-gradient-to-b from-lime-950 to-black text-white pt-20 px-6 md:px-14  flex flex-col md:flex-row items-center justify-between pb-3"
         >
             {/* Image Section */}
             <Fade duration={1000}   >
@@ -24,15 +24,18 @@ export const AboutPage = () => {
             {/* Text Section */}
             <div className="md:w-1/2 max-w-2xl">
                 <Slide direction="right"   >
-                    <h2 className="text-4xl font-bold text-center md:text-left mb-6 text-lime-300 flex items-center gap-3">
-                        <FaUserAlt className="text-lime-400" /> About Me
+                    <h2
+                        className="lg:text-4xl text-3xl font-bold text-lime-200 mb-4 text-center lg:text-left border-b-2 pb-2">
+                        Here is my information,
+                        <br />
+                        <span className="lg:text-6xl text-5xl text-lime-500">About Me</span>
                     </h2>
                 </Slide>
 
                 <Fade duration={1500}   >
                     <p className="text-lg leading-relaxed mb-6 text-gray-300">
-                        Hello! I'm <span className="font-semibold text-lime-400">KI Apurba</span>,
-                        a frontend web developer with a passion for building modern, sleek user interfaces. I love using{" "}
+                        Hello! I'm <span className="font-semibold text-lime-400">Kamrul Islam Apurba</span>,
+                        a web developer with a passion for building modern, sleek user interfaces. I love using{" "}
                         <span className="italic underline text-white">
                             React, Tailwind CSS, Vite.js, Next.js, Node.js, and Express
                         </span>{" "}

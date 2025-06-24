@@ -114,7 +114,9 @@ const ProjectsSection = () => {
                 {/* --------------Projects card-------------- */}
                 <div className="grid grid-cols-1   md:grid-cols-2  gap-5 mx-4">
                     {projects.map((project) => (
-                        <ProjectCard key={project.name} project={project} />
+                        <Link to={'/projects'}>
+                            <ProjectCard key={project.name} project={project} />
+                        </Link>
                     ))}
                 </div>
             </div>

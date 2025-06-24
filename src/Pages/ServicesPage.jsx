@@ -45,7 +45,7 @@ const services = [
 
 export const ServicesPage = () => {
     return (
-        <div>
+        <div className=''>
 
             <div className='border-t right-5 fixed border-lime-500 w-fit font-serif text-lime-500 rounded-full px-2 shadow shadow-lime-400 hidden lg:block mb-10 text-right'>Services</div>
 
@@ -63,7 +63,7 @@ export const ServicesPage = () => {
                     <div className='text-lime-500 grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-6xl mx-auto rounded-b-2xl text-center my-5 lg:mt-10 px-5'>
                         {
                             services.map((srv, i) => (
-                                <div key={i} className='border shadow-lg shadow-lime-400 flex flex-col items-center py-4 rounded-tl-4xl rounded-br-4xl'>
+                                <div key={i} className='border shadow-lg shadow-lime-400 flex flex-col items-center py-4 rounded-tl-4xl rounded-br-4xl bg-gradient-to-t from-lime-950 to-black'>
                                     <p className='my-5'>{srv.icon}</p>
                                     <p className='text-3xl font-medium mb-5'>{srv.title}</p>
                                     <p className='text-lg px-5'>{srv.description}</p>
