@@ -7,6 +7,7 @@ import pr6 from "/Projects/prX.png";
 import pp from "/Projects/pp.png";
 import px from "/Projects/px.png";
 import { Fade } from 'react-awesome-reveal';
+import { Link } from 'react-router';
 
 const projects = [
     {
@@ -154,19 +155,49 @@ const ProjectCard = ({ project }) => {
 
 const AllProjectsPage = () => {
     return (
-        <section id="portfolio" className="py-16 bg-gradient-to-b from-lime-950 to-black text-white">
-            <h2 className="text-4xl font-bold text-lime-400 text-center mb-12">Vite Projects</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mx-4">
-                {projects.map((project) => (
-                    <ProjectCard key={project.name} project={project} />
-                ))}
+        <section className="py-16 bg-gradient-to-b from-lime-950 to-black grid lg:grid-cols-3 grid-cols-1  mx-auto">
+
+
+            <div className='hidden lg:block '>
+                <div className='lg:sticky lg:top-18'>
+                    <h2
+                        className="lg:text-4xl text-3xl font-bold text-lime-200 mb-4 text-center lg:text-left lg:pl-10  ">
+                        Here is my
+                        <br />
+                        <span className="lg:text-6xl text-5xl text-lime-500">Latest Projects</span>
+                    </h2>
+
+                    <div className='text-xl text-lime-400 pl-10 lg:sticky lg:top-44 pr-3 text-justify'>
+                        All of them is fullstack project . and fully responsive. The backend code are also done by me.
+                        <br />
+                        All The project made with Vite and also next.js is also shown here.
+                        Click on the view details button to know more about the project.
+
+
+                        <div className="flex items-center  py-5 lg:py-10 sticky top-64">
+                            <Link to={'/contact'}
+                                className="py-2 mx-5  px-5 lg:px-9 lg:text-lg rounded-full bg-lime-600 text-black hover:border-2 hover:bg-black transition hover:border-lime-600 hover:text-lime-600  hover:drop-shadow-2xl hover:drop-shadow-lime-950 font-semibold w-full lg:w-fit text-center">
+                                Get in touch
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <h2 className="text-4xl font-bold text-lime-400 text-center mb-12">Next.js Projects</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 mx-4">
-                {NextProjects.map((NextProject) => (
-                    <ProjectCard key={NextProject.name} project={NextProject} />
-                ))}
+            <div className='col-span-2'>
+                <h2 className="text-4xl font-bold text-lime-400 text-center mb-12">Vite Projects</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-12 mx-4">
+                    {projects.map((project) => (
+                        <ProjectCard key={project.name} project={project} />
+                    ))}
+                </div>
+
+                <h2 className="text-4xl font-bold text-lime-400 text-center my-12">Next.js Projects</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2  gap-12 mx-4">
+                    {NextProjects.map((NextProject) => (
+                        <ProjectCard key={NextProject.name} project={NextProject} />
+                    ))}
+                </div>
             </div>
         </section>
     );
