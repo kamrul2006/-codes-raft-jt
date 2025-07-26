@@ -6,6 +6,7 @@ import pr5 from "/Projects/pr5.jpg";
 import pr6 from "/Projects/prX.png";
 import pp from "/Projects/pp.png";
 import px from "/Projects/px.png";
+import ki from "/Projects/ki.png";
 import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-router';
 
@@ -84,13 +85,25 @@ const NextProjects = [
         name: 'K-Blogify',
         nameDis: "( Full-stack blogging platform )",
         image: px,
-        techStack: ['React', 'Next.js', 'Node.js', 'TailwindCSS', 'React-Router', 'Firebase', "etc."],
+        techStack: ['React', 'Next.js', 'Node.js', 'TailwindCSS', 'React-Router', 'Next-Auth', "etc."],
         description: 'A modern full-stack blogging platform built with Next.js 15, Express.js, and MongoDB, designed for seamless content creation and management with full authentication support. Deployed on Vercel for frontend and Railway/Render for backend.',
 
         liveLink: "https://k-blogify.vercel.app/",
         githubLink: 'https://github.com/kamrul2006/K-Blogify-Next.js',
         challenges: ['Integrating payment gateway', 'Optimizing performance for large datasets', 'Admin, Moderator and User Role implementation'],
         futurePlans: ['Implementing AI-powered product recommendations', 'Adding support for multiple currencies'],
+    },
+    {
+        name: 'K-EduNest',
+        nameDis: "(Full-stack educational portal)",
+        image: ki,
+        techStack: ['React', 'Next.js', 'Node.js', 'TailwindCSS', 'React-Router', 'Firebase', "etc."],
+        description: 'A modern full-stack blogging platform built with Next.js 15, Express.js, and MongoDB, designed for seamless content creation and management with full authentication support. Deployed on Vercel for frontend and Railway/Render for backend.',
+
+        liveLink: "https://kedunest.vercel.app/",
+        githubLink: 'https://github.com/kamrul2006/k-edunest',
+        challenges: ['Integrating payment gateway', 'Optimizing performance for large datasets', 'Admin, Moderator and User Role implementation'],
+        futurePlans: ['Implementing AI-powered College recommendations', 'Adding support for multiple currencies'],
     },
 
 ];
@@ -193,7 +206,7 @@ const AllProjectsPage = () => {
                 </div>
 
                 <h2 className="text-4xl font-bold text-lime-400 text-center my-12">Next.js Projects</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2  gap-12 mx-4">
+                <div className="grid grid-cols-1 md:grid-cols-3  gap-12 mx-4">
                     {NextProjects.map((NextProject) => (
                         <ProjectCard key={NextProject.name} project={NextProject} />
                     ))}
