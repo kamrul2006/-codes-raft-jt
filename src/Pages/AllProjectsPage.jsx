@@ -7,6 +7,7 @@ import pr6 from "/Projects/prX.png";
 import pp from "/Projects/pp.png";
 import px from "/Projects/px.png";
 import ki from "/Projects/ki.png";
+import ka from "/Projects/ka.png";
 import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-router';
 
@@ -66,6 +67,17 @@ const projects = [
         challenges: ['Real-time updates synchronization', 'Designing an intuitive user interface', "Fully responsive"],
         futurePlans: ['Adding collaboration features', 'Integrating with calendar apps'],
     },
+    {
+        name: 'KIBank',
+        nameDis: "(Digital banking front-end App)",
+        image: ka,
+        techStack: ['React', 'Node.js', 'TailwindCSS', 'React-Router', 'Firebase', "etc."],
+        description: 'A sleek, modern digital banking front-end built using React 19, Tailwind CSS 4, and Vite 6. KI Bank UI is designed for performance, responsiveness, and an intuitive user experience, showcasing a contemporary layout with reusable components, elegant animations, and a scalable codebase.',
+        liveLink: 'https://ki-bank-ltd.vercel.app/',
+        githubLink: 'https://github.com/kamrul2006/KI-BANK_JT',
+        challenges: [ 'Designing an intuitive user interface', "Fully responsive"],
+        futurePlans: ['Adding collaboration features', 'Integrating with calendar apps'],
+    },
 ];
 
 const NextProjects = [
@@ -112,46 +124,74 @@ const ProjectCard = ({ project }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <div className="bg-black border border-lime-400 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out w-full font-semibold">
+        <div className="relative overflow-hidden rounded-xl shadow-lg border border-lime-400 group transition-all duration-500 ease-in-out">
 
+            {/* Project Image */}
             <Fade duration={1500}>
-                <img src={project.image} alt={project.name} className="w-full h-40 object-cover rounded-t-xl mb-4 border-b-2 border-lime-400" />
+                <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition-transform duration-300"
+                />
             </Fade>
-            <div className='px-6 pb-3'>
-                <h3 className="text-2xl font-semibold text-lime-800">{project.name}</h3>
-                <h4 className="text-md text-gray-500 mb-4  ">{project.nameDis}</h4>
+
+            {/* Hover Overlay Content */}
+            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center px-4 text-center">
+                <h3 className="text-2xl font-bold text-lime-400 mb-3 drop-shadow-lg">{project.name}</h3>
 
                 <button
-                    className="bg-lime-600 text-black py-2 px-6 rounded-lg mt-4 w-full hover:bg-lime-700 transition-all duration-300  "
+                    className="bg-lime-600 text-black font-semibold py-2 px-6 rounded-full hover:bg-lime-700 transition-all duration-300"
                     onClick={() => setShowModal(true)}
                 >
                     View Details
                 </button>
             </div>
 
+            {/* Modal */}
             {showModal && (
-                <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
+                <div className="fixed inset-0 bg-black/60 bg-opacity-60 flex justify-center items-center z-50">
                     <div className="bg-white rounded-xl w-11/12 md:w-3/4 lg:w-2/3 p-8 max-h-[80vh] overflow-auto transition-all duration-300 ease-in-out">
-                        <div className="relative">
-                            <img src={project.image} alt={project.name} className="w-full h-56 object-cover rounded-xl" />
-                        </div>
-
-                        <h2 className="text-3xl font-semibold text-lime-800 mt-6">{project.name} <span className="text-lg text-gray-500">{project.nameDis}</span></h2>
-                        <p className="mt-6 text-lg text-gray-700"><strong>Technology Stack:</strong> {project.techStack.join(', ')}</p>
-                        <p className="mt-4 text-lg text-gray-700"><strong>Description:</strong> {project.description}</p>
+                        <img
+                            src={project.image}
+                            alt={project.name}
+                            className="w-full h-56 object-cover rounded-xl"
+                        />
+                        <h2 className="text-3xl font-semibold text-lime-800 mt-6">
+                            {project.name} <span className="text-lg text-gray-500">{project.nameDis}</span>
+                        </h2>
+                        <p className="mt-6 text-lg text-gray-700">
+                            <strong>Technology Stack:</strong> {project.techStack.join(', ')}
+                        </p>
+                        <p className="mt-4 text-lg text-gray-700">
+                            <strong>Description:</strong> {project.description}
+                        </p>
 
                         <div className="flex gap-6 mt-6 justify-center">
-                            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="bg-lime-600 text-white py-2 px-6 rounded-lg hover:bg-lime-700 transition duration-200">
+                            <a
+                                href={project.liveLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-lime-600 text-white py-2 px-6 rounded-lg hover:bg-lime-700 transition duration-200"
+                            >
                                 Live Project
                             </a>
 
-                            <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="bg-transparent border-2 border-lime-600 text-lime-600 py-2 px-6 rounded-lg hover:bg-lime-100 transition duration-200">
+                            <a
+                                href={project.githubLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-transparent border-2 border-lime-600 text-lime-600 py-2 px-6 rounded-lg hover:bg-lime-100 transition duration-200"
+                            >
                                 GitHub Repository
                             </a>
                         </div>
 
-                        <p className="mt-6 text-lg text-gray-700"><strong>Challenges:</strong> {project.challenges.join(', ')}</p>
-                        <p className="mt-4 text-lg text-gray-700"><strong>Future Plans:</strong> {project.futurePlans.join(', ')}</p>
+                        <p className="mt-6 text-lg text-gray-700">
+                            <strong>Challenges:</strong> {project.challenges.join(', ')}
+                        </p>
+                        <p className="mt-4 text-lg text-gray-700">
+                            <strong>Future Plans:</strong> {project.futurePlans.join(', ')}
+                        </p>
 
                         <button
                             className="bg-lime-500 text-white py-2 px-6 rounded-lg mt-6 w-full hover:bg-lime-600 transition duration-200"
