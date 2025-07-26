@@ -57,7 +57,7 @@ const ProjectCard = ({ project }) => {
 
     return (
         <Slide direction="right">
-            <div className="bg-black border border-lime-400 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out w-full p-3">
+            <div className="bg-black border border-lime-400 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out w-full p-3 hover:scale-x-105 hover:bg-lime-950">
 
                 <Fade duration={1500}>
                     <img src={project.image} alt={project.name} className="w-full lg:h-20 h-40 object-cover rounded-xl mb-4 border-2" />
@@ -112,7 +112,7 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* --------------Projects card-------------- */}
-                <div className="grid grid-cols-1   md:grid-cols-2  gap-5 mx-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-4">
                     {projects.map((project) => (
                         <Link to={'/projects'}>
                             <ProjectCard key={project.name} project={project} />
