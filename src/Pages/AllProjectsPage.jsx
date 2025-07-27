@@ -9,7 +9,7 @@ import px from "/Projects/px.png";
 import ki from "/Projects/ki.png";
 import ka from "/Projects/ka.png";
 import { Fade } from 'react-awesome-reveal';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const projects = [
     {
@@ -124,81 +124,58 @@ const ProjectCard = ({ project }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <div className="relative overflow-hidden rounded-xl shadow-lg border border-lime-400 group transition-all duration-500 ease-in-out">
+        <div className="relative group overflow-hidden rounded-2xl shadow-lg border border-lime-400 transform transition duration-500">
+            <div className="relative">
+                <Fade duration={1500}>
+                    <img
+                        src={project.image}
+                        alt={project.name}
+                        className="w-full h-48 object-cover rounded-2xl"
+                    />
+                </Fade>
+                <div className="lg:absolute hidden lg:block lg:inset-0 bg-gradient-to-t from-black via-black/60 to-black opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
 
-            {/* Project Image */}
-            <Fade duration={1500}>
-                <img
-                    src={project.image}
-                    alt={project.name}
-                    className="w-full h-48 object-cover rounded-xl transform group-hover:scale-105 transition-transform duration-300"
-                />
-            </Fade>
-
-            {/* Hover Overlay Content */}
-            <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center px-4 text-center">
-                <h3 className="text-2xl font-bold text-lime-400 mb-3 drop-shadow-lg">{project.name}</h3>
-
+            <div className="hidden absolute inset-0 lg:flex flex-col justify-center items-center text-center px-4 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500">
+                <h3 className="text-2xl font-bold text-lime-400 drop-shadow-md mb-2">{project.name}</h3>
+                <p className="text-sm text-lime-200 italic mb-3">{project.nameDis}</p>
+                <p className="text-xs text-gray-200 mb-4">Full-stack, scalable, and user-focused. Explore for tech details & live demo!</p>
                 <button
-                    className="bg-lime-600 text-black font-semibold py-2 px-6 rounded-full hover:bg-lime-700 transition-all duration-300"
+                    className="bg-lime-600 text-black font-semibold py-2 px-5 rounded-full hover:bg-lime-700 transition-all duration-300"
                     onClick={() => setShowModal(true)}
                 >
                     View Details
                 </button>
             </div>
 
-            {/* Modal */}
+            <div className="md:hidden bg-black text-lime-300 p-4 text-center">
+                <h3 className="text-xl font-bold">{project.name}</h3>
+                <p className="text-sm italic">{project.nameDis}</p>
+                <button
+                    className="mt-3 bg-lime-600 text-black font-semibold py-2 px-4 rounded-full hover:bg-lime-700 transition"
+                    onClick={() => setShowModal(true)}
+                >
+                    View Details
+                </button>
+            </div>
+
             {showModal && (
-                <div className="fixed inset-0 bg-black/60 bg-opacity-60 flex justify-center items-center z-50">
-                    <div className="bg-white rounded-xl w-11/12 md:w-3/4 lg:w-2/3 p-8 max-h-[80vh] overflow-auto transition-all duration-300 ease-in-out">
-                        <img
-                            src={project.image}
-                            alt={project.name}
-                            className="w-full h-56 object-cover rounded-xl"
-                        />
-                        <h2 className="text-3xl font-semibold text-lime-800 mt-6">
-                            {project.name} <span className="text-lg text-gray-500">{project.nameDis}</span>
-                        </h2>
-                        <p className="mt-6 text-lg text-gray-700">
-                            <strong>Technology Stack:</strong> {project.techStack.join(', ')}
-                        </p>
-                        <p className="mt-4 text-lg text-gray-700">
-                            <strong>Description:</strong> {project.description}
-                        </p>
+                <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-50 p-4">
+                    <div className="bg-white rounded-2xl w-full max-w-3xl p-6 overflow-y-auto max-h-[85vh]">
+                        <img src={project.image} alt={project.name} className="w-full h-64 object-cover rounded-xl" />
+                        <h2 className="text-3xl font-bold text-lime-700 mt-4">{project.name} <span className="text-lg text-gray-500">{project.nameDis}</span></h2>
+                        <p className="mt-4 text-gray-700"><strong>Technology Stack:</strong> {project.techStack.join(', ')}</p>
+                        <p className="mt-2 text-gray-700"><strong>Description:</strong> {project.description}</p>
 
-                        <div className="flex gap-6 mt-6 justify-center">
-                            <a
-                                href={project.liveLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-lime-600 text-white py-2 px-6 rounded-lg hover:bg-lime-700 transition duration-200"
-                            >
-                                Live Project
-                            </a>
-
-                            <a
-                                href={project.githubLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-transparent border-2 border-lime-600 text-lime-600 py-2 px-6 rounded-lg hover:bg-lime-100 transition duration-200"
-                            >
-                                GitHub Repository
-                            </a>
+                        <div className="flex flex-wrap gap-4 mt-4 justify-center">
+                            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="bg-lime-600 text-white py-2 px-6 rounded-lg hover:bg-lime-700 transition">Live Site</a>
+                            <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="border-2 border-lime-600 text-lime-600 py-2 px-6 rounded-lg hover:bg-lime-100 transition">GitHub</a>
                         </div>
 
-                        <p className="mt-6 text-lg text-gray-700">
-                            <strong>Challenges:</strong> {project.challenges.join(', ')}
-                        </p>
-                        <p className="mt-4 text-lg text-gray-700">
-                            <strong>Future Plans:</strong> {project.futurePlans.join(', ')}
-                        </p>
+                        <p className="mt-4 text-gray-700"><strong>Challenges:</strong> {project.challenges.join(', ')}</p>
+                        <p className="mt-2 text-gray-700"><strong>Future Plans:</strong> {project.futurePlans.join(', ')}</p>
 
-                        <button
-                            className="bg-lime-500 text-white py-2 px-6 rounded-lg mt-6 w-full hover:bg-lime-600 transition duration-200"
-                            onClick={() => setShowModal(false)}
-                        >
-                            Close
-                        </button>
+                        <button onClick={() => setShowModal(false)} className="mt-6 w-full bg-lime-600 text-white py-2 rounded-lg hover:bg-lime-700 transition">Close</button>
                     </div>
                 </div>
             )}
@@ -207,50 +184,62 @@ const ProjectCard = ({ project }) => {
 };
 
 const AllProjectsPage = () => {
+    const [filter, setFilter] = useState('vite');
+
     return (
-        <section className="py-16 bg-gradient-to-b from-lime-950 to-black grid lg:grid-cols-3 grid-cols-1  mx-auto">
-
-
-            <div className='hidden lg:block '>
-                <div className='lg:sticky lg:top-18'>
-                    <h2
-                        className="lg:text-4xl text-3xl font-bold text-lime-200 mb-4 text-center lg:text-left lg:pl-10  ">
-                        Here is my
-                        <br />
-                        <span className="lg:text-6xl text-5xl text-lime-500">Latest Projects</span>
-                    </h2>
-
-                    <div className='text-xl text-lime-400 pl-10 lg:sticky lg:top-44 pr-3 text-justify'>
-                        All of them is fullstack project . and fully responsive. The backend code are also done by me.
-                        <br />
-                        All The project made with Vite and also next.js is also shown here.
-                        Click on the view details button to know more about the project.
-
-
-                        <div className="flex items-center  py-5 lg:py-10 sticky top-64">
-                            <Link to={'/contact'}
-                                className="py-2 mx-5  px-5 lg:px-9 lg:text-lg rounded-full bg-lime-600 text-black hover:border-2 hover:bg-black transition hover:border-lime-600 hover:text-lime-600  hover:drop-shadow-2xl hover:drop-shadow-lime-950 font-semibold w-full lg:w-fit text-center">
-                                Get in touch
-                            </Link>
+        <section className="bg-gradient-to-b from-lime-950 to-black text-white py-20 px-4">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <aside className="lg:sticky lg:top-20 space-y-6">
+                    <h2 className="text-3xl lg:text-4xl font-bold text-lime-200 text-center lg:text-left">Explore My<br /><span className="text-5xl lg:text-6xl text-lime-500">Latest Projects</span></h2>
+                    <p className="text-lime-300 leading-relaxed text-justify lg:text-left">
+                        From fast Vite-based UI to full-fledged apps with Next.js — these projects reflect my full-stack journey. Each one is uniquely built, passionately styled, and performance-optimized.
+                    </p>
+                    <div className="bg-black/40 border border-lime-600 rounded-xl p-4">
+                        <h4 className="text-lime-400 text-lg font-semibold mb-2">View by Stack:</h4>
+                        <div className="flex gap-4">
+                            <button
+                                onClick={() => setFilter('vite')}
+                                className={`py-1 px-4 rounded-full font-semibold transition ${filter === 'vite' ? 'bg-lime-600 text-black' : 'bg-transparent text-lime-400 border border-lime-500'}`}
+                            >
+                                Vite Projects
+                            </button>
+                            <button
+                                onClick={() => setFilter('next')}
+                                className={`py-1 px-4 rounded-full font-semibold transition ${filter === 'next' ? 'bg-lime-600 text-black' : 'bg-transparent text-lime-400 border border-lime-500'}`}
+                            >
+                                Next.js Projects
+                            </button>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div className="flex justify-center lg:justify-start">
+                        <Link to='/contact' className="bg-lime-600 hover:bg-black hover:text-lime-500 border-2 border-transparent hover:border-lime-500 text-black font-semibold px-6 py-2 rounded-full transition-all">
+                            Get in Touch
+                        </Link>
+                    </div>
+                </aside>
 
-            <div className='col-span-2'>
-                <h2 className="text-4xl font-bold text-lime-400 text-center mb-12">Vite Projects</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-12 mx-4">
-                    {projects.map((project) => (
-                        <ProjectCard key={project.name} project={project} />
-                    ))}
-                </div>
-
-                <h2 className="text-4xl font-bold text-lime-400 text-center my-12">Next.js Projects</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3  gap-12 mx-4">
-                    {NextProjects.map((NextProject) => (
-                        <ProjectCard key={NextProject.name} project={NextProject} />
-                    ))}
-                </div>
+                <main className="lg:col-span-2 space-y-20">
+                    {filter === 'vite' && (
+                        <div>
+                            <h3 className="text-4xl font-bold text-center text-lime-400 mb-10">Vite Projects</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                                {projects.map(project => (
+                                    <ProjectCard key={project.name} project={project} />
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                    {filter === 'next' && (
+                        <div>
+                            <h3 className="text-4xl font-bold text-center text-lime-400 mb-10">Next.js Projects</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                                {NextProjects.map(project => (
+                                    <ProjectCard key={project.name} project={project} />
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </main>
             </div>
         </section>
     );
